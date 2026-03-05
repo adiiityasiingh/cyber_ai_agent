@@ -67,6 +67,25 @@ def query():
         return jsonify({"error": f"Unexpected error: {exc}"}), 500
 
 
+@app.get("/")
+def root():
+    db_ready = DB_PATH.exists()
+    return jsonify({
+        "service":   "Cyber Ireland Intelligence Agent",
+        "status":    "online",
+        "version":   "1.0.0",
+        "model":     "gemini-2.0-flash",
+        "kb_status": "ready" if db_ready else "not_initialised",
+        "endpoints": {
+            "query":  "POST /query",
+            "health": "GET  /health",
+            "status": "GET  /status"
+        },
+        "github": "https://github.com/adiiityasiingh/cyber_ai_agent",
+        "live_app": "https://cyber-rag-agent.onrender.com/"
+    }), 200
+
+
 @app.get("/health")
 def health():
     return jsonify({"status": "ok", "service": "cyber-rag-agent"}), 200
