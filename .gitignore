@@ -1,0 +1,20 @@
+# --- Secrets & Environment ---
+.env
+*.env
+auth.json
+secrets.py
+credentials.json
+
+# --- Python & Dependencies ---
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.venv
+venv/
+env/
+lib/
+bin/
+build/
+dist/
+*.egg-info/

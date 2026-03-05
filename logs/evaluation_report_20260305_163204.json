@@ -1,0 +1,227 @@
+{
+  "suite": "Cyber Ireland RAG Agent – Evaluation",
+  "run_at": "2026-03-05T16:32:04.762531Z",
+  "total_duration": 22.39,
+  "tests": [
+    {
+      "status": "success",
+      "session_id": "6a3632cc",
+      "query": "What is the total number of jobs reported, and where exactly is this stated?",
+      "answer": "The total number of jobs reported in the Cyber Ireland 2022 report is 7,351. This is stated on page 19 in the \"4.5 SECTOR SUMMARY\" section, under the \"EMPLOYMENT\" column in the \"SUMMARY TABLE\".",
+      "trace": [
+        {
+          "iteration": 1,
+          "finish_reason": "STOP",
+          "latency_ms": 2048,
+          "thoughts": [],
+          "tool_calls": [
+            {
+              "tool": "search_document",
+              "inputs": {
+                "query": "total number of jobs reported"
+              },
+              "call_id": "search_document_1772728304423"
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "search_document",
+              "call_id": "search_document_1772728304423",
+              "result_preview": "{\"query\": \"total number of jobs reported\", \"results\": [{\"page\": 19, \"type\": \"table\", \"content\": \"| ESTIMATED GVA ESTIMATED NUMBER TYPE OF FIRM AVERAGE SALARY PER EMPLOYEE OF EMPLOYEES TOTAL GVA |  |  |  |  |\\n|---|---|---|---|---|\\n|  |  |  |  |  |\\n| Dedicated | €75k | €136k | 3,372 | €459m |\\n| Di...",
+              "latency_ms": 11
+            }
+          ],
+          "final_text": null
+        },
+        {
+          "iteration": 2,
+          "finish_reason": "STOP",
+          "latency_ms": 1406,
+          "thoughts": [
+            "The total number of jobs reported in the Cyber Ireland 2022 report is 7,351. This is stated on page 19 in the \"4.5 SECTOR SUMMARY\" section, under the \"EMPLOYMENT\" column in the \"SUMMARY TABLE\"."
+          ],
+          "tool_calls": [],
+          "tool_results": [],
+          "final_text": "The total number of jobs reported in the Cyber Ireland 2022 report is 7,351. This is stated on page 19 in the \"4.5 SECTOR SUMMARY\" section, under the \"EMPLOYMENT\" column in the \"SUMMARY TABLE\"."
+        }
+      ],
+      "iterations": 2,
+      "duration_sec": 3.47,
+      "model": "gemini-2.5-flash",
+      "timestamp": "2026-03-05T16:31:45.841750+00:00",
+      "test_meta": {
+        "test_id": "test_1_verification",
+        "test_label": "Test 1: Verification Challenge",
+        "expected": [
+          "Retrieves specific job count as an integer",
+          "Cites exact page number",
+          "Includes verbatim or near-verbatim passage from document"
+        ]
+      }
+    },
+    {
+      "status": "success",
+      "session_id": "df91aa88",
+      "query": "Compare the concentration of 'Pure-Play' cybersecurity firms in the South-West against the National Average.",
+      "answer": "Based on the Cyber Ireland 2022 Cybersecurity Sector Report, 33% of all cybersecurity firms in Ireland are classified as 'Dedicated' (Pure-Play) firms. However, the report does not provide specific data on the concentration of 'Pure-Play' cybersecurity firms for the South-West region, making a direct comparison impossible with the available information.\n\n**Source Citation:**\n*   \"Figure 3.2 shows that 160 (33%) of total firms are dedicated (pure-play) and fully attribute their employment and revenue to activity within the cyber security sector.\" (Page 13)",
+      "trace": [
+        {
+          "iteration": 1,
+          "finish_reason": "STOP",
+          "latency_ms": 1663,
+          "thoughts": [],
+          "tool_calls": [
+            {
+              "tool": "search_tables",
+              "inputs": {
+                "query": "Pure-Play concentration South-West national average"
+              },
+              "call_id": "search_tables_1772728309508"
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "search_tables",
+              "call_id": "search_tables_1772728309508",
+              "result_preview": "{\"query\": \"Pure-Play concentration South-West national average\", \"results\": [{\"page\": 20, \"type\": \"table\", \"content\": \"| NO. OF FIRMS (PER 100,000 NUMBER OF SECTOR AVERAGE REGION NATIONAL EMPLOYEES REVENUE SECTOR GVA SALARY POPULATION) |  |  |  |  |  |\\n|---|---|---|---|---|---|\\n| Ireland | 489 (9....",
+              "latency_ms": 4
+            }
+          ],
+          "final_text": null
+        },
+        {
+          "iteration": 2,
+          "finish_reason": "STOP",
+          "latency_ms": 3413,
+          "thoughts": [],
+          "tool_calls": [
+            {
+              "tool": "search_document",
+              "inputs": {
+                "query": "Pure-Play firms South-West concentration"
+              },
+              "call_id": "search_document_1772728312926"
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "search_document",
+              "call_id": "search_document_1772728312926",
+              "result_preview": "{\"query\": \"Pure-Play firms South-West concentration\", \"results\": [{\"page\": 13, \"type\": \"text\", \"content\": \"24 CYBER IRELAND 2022 EDITION STATE OF THE CYBER SECURITY SECTOR IN IRELAND 25\\nFigure 3.2 shows that 160 (33%) of total firms are\\ndedicated (pure-play) and fully attribute their\\nemployment a...",
+              "latency_ms": 11
+            }
+          ],
+          "final_text": null
+        },
+        {
+          "iteration": 3,
+          "finish_reason": "STOP",
+          "latency_ms": 2957,
+          "thoughts": [
+            "Based on the Cyber Ireland 2022 Cybersecurity Sector Report, 33% of all cybersecurity firms in Ireland are classified as 'Dedicated' (Pure-Play) firms. However, the report does not provide specific data on the concentration of 'Pure-Play' cybersecurity firms for the South-West region, making a direct comparison impossible with the available information.\n\n**Source Citation:**\n*   \"Figure 3.2 shows that 160 (33%) of total firms are dedicated (pure-play) and fully attribute their employment and rev..."
+          ],
+          "tool_calls": [],
+          "tool_results": [],
+          "final_text": "Based on the Cyber Ireland 2022 Cybersecurity Sector Report, 33% of all cybersecurity firms in Ireland are classified as 'Dedicated' (Pure-Play) firms. However, the report does not provide specific data on the concentration of 'Pure-Play' cybersecurity firms for the South-West region, making a direct comparison impossible with the available information.\n\n**Source Citation:**\n*   \"Figure 3.2 shows that 160 (33%) of total firms are dedicated (pure-play) and fully attribute their employment and revenue to activity within the cyber security sector.\" (Page 13)"
+        }
+      ],
+      "iterations": 3,
+      "duration_sec": 8.05,
+      "model": "gemini-2.5-flash",
+      "timestamp": "2026-03-05T16:31:55.896073+00:00",
+      "test_meta": {
+        "test_id": "test_2_synthesis",
+        "test_label": "Test 2: Data Synthesis Challenge",
+        "expected": [
+          "Uses search_tables tool to find regional breakdown",
+          "Extracts South-West Pure-Play percentage",
+          "Extracts National Average Pure-Play percentage",
+          "Produces accurate comparison with numbers"
+        ]
+      }
+    },
+    {
+      "status": "success",
+      "session_id": "3768952a",
+      "query": "Based on our 2022 baseline and the stated 2030 job target, what is the required compound annual growth rate (CAGR) to hit that goal?",
+      "answer": "To achieve the 2030 job target of 17,333 cyber security professionals from the 2021 baseline of 7,351, a Compound Annual Growth Rate (CAGR) of approximately 10.00% is required.\n\nSource:\n- 2021 Baseline Jobs: 7,351 (Page 27, Table 7.1)\n- 2030 Job Target: 17,333 (Page 27, Table 7.1)\n- Years: 2030 - 2021 = 9 years\n\nWorking:\nCAGR = (17333 / 7351)^(1/9) - 1 = 9.9998%",
+      "trace": [
+        {
+          "iteration": 1,
+          "finish_reason": "STOP",
+          "latency_ms": 1751,
+          "thoughts": [],
+          "tool_calls": [
+            {
+              "tool": "search_document",
+              "inputs": {
+                "query": "2022 baseline jobs 2030 job target"
+              },
+              "call_id": "search_document_1772728319651"
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "search_document",
+              "call_id": "search_document_1772728319651",
+              "result_preview": "{\"query\": \"2022 baseline jobs 2030 job target\", \"results\": [{\"page\": 24, \"type\": \"text\", \"content\": \"46 CYBER IRELAND 2022 EDITION STATE OF THE CYBER SECURITY SECTOR IN IRELAND 47\\nFIGURE 5.1 NUMBER OF JOB POSTINGS (DECEMBER 2021)\\nFIGURE 5.2 JOB POST EXPERIENCE LEVEL\\nSource: LinkedIn recruitment d...",
+              "latency_ms": 10
+            }
+          ],
+          "final_text": null
+        },
+        {
+          "iteration": 2,
+          "finish_reason": "STOP",
+          "latency_ms": 2767,
+          "thoughts": [],
+          "tool_calls": [
+            {
+              "tool": "calculate_cagr",
+              "inputs": {
+                "years": 9,
+                "end_value": 17333,
+                "start_value": 7351
+              },
+              "call_id": "calculate_cagr_1772728322428"
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "calculate_cagr",
+              "call_id": "calculate_cagr_1772728322428",
+              "result_preview": "{\"start_value\": 7351, \"end_value\": 17333, \"years\": 9, \"cagr_decimal\": 0.099998, \"cagr_percent\": 9.9998, \"formula\": \"(17333 / 7351)^(1/9) - 1 = 9.9998%\", \"interpretation\": \"To grow from 7,351 to 17,333 over 9 years requires a CAGR of 9.9998%.\"}",
+              "latency_ms": 0
+            }
+          ],
+          "final_text": null
+        },
+        {
+          "iteration": 3,
+          "finish_reason": "STOP",
+          "latency_ms": 2329,
+          "thoughts": [
+            "To achieve the 2030 job target of 17,333 cyber security professionals from the 2021 baseline of 7,351, a Compound Annual Growth Rate (CAGR) of approximately 10.00% is required.\n\nSource:\n- 2021 Baseline Jobs: 7,351 (Page 27, Table 7.1)\n- 2030 Job Target: 17,333 (Page 27, Table 7.1)\n- Years: 2030 - 2021 = 9 years\n\nWorking:\nCAGR = (17333 / 7351)^(1/9) - 1 = 9.9998%"
+          ],
+          "tool_calls": [],
+          "tool_results": [],
+          "final_text": "To achieve the 2030 job target of 17,333 cyber security professionals from the 2021 baseline of 7,351, a Compound Annual Growth Rate (CAGR) of approximately 10.00% is required.\n\nSource:\n- 2021 Baseline Jobs: 7,351 (Page 27, Table 7.1)\n- 2030 Job Target: 17,333 (Page 27, Table 7.1)\n- Years: 2030 - 2021 = 9 years\n\nWorking:\nCAGR = (17333 / 7351)^(1/9) - 1 = 9.9998%"
+        }
+      ],
+      "iterations": 3,
+      "duration_sec": 6.86,
+      "model": "gemini-2.5-flash",
+      "timestamp": "2026-03-05T16:32:04.760045+00:00",
+      "test_meta": {
+        "test_id": "test_3_forecasting",
+        "test_label": "Test 3: Forecasting Challenge",
+        "expected": [
+          "Searches document for 2022 job baseline",
+          "Searches document for 2030 job target",
+          "Calls calculate_cagr tool with correct values",
+          "Reports CAGR as a percentage with workings"
+        ]
+      }
+    }
+  ]
+}
